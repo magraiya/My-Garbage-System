@@ -1,38 +1,204 @@
-.App {
+:root {
+  --primary-green: #4CAF50;
+  --primary-blue: #2196F3;
+  --text-dark: #333;
+  --text-light: #fff;
+  --bg-light: #f4f4f4;
+  --card-bg: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-green);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-blue);
+}
+
+.cta-button, .main-cta-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--text-light);
+}
+
+.cta-button {
+  background-color: var(--primary-green);
+}
+
+.cta-button:hover {
+  background-color: #43A047;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+.main-cta-button {
+  background-color: var(--primary-blue);
+  font-size: 1.1rem;
+}
+
+.main-cta-button:hover {
+  background-color: #1976D2;
+}
+
+/* Features Section Styles */
+.features-section {
+  padding: 4rem 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-green);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #2c3e50;
+  color: var(--text-light);
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-green);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .header nav {
+    margin: 1rem 0;
   }
-  to {
-    transform: rotate(360deg);
+  .header ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header ul li {
+    margin: 0.5rem 0;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
