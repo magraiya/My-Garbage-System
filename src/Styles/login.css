@@ -1,0 +1,136 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+              url('../assets/img/waste-management-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.login-content {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 2.5rem;
+  background: rgba(45, 52, 54, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-content h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.error-message {
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #fff;
+}
+
+.form-footer a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .login-content {
+    margin: 40px auto;
+    padding: 1.5rem;
+  }
+} 
+.form-group label {
+  display: block;
+  color: #e0e0e0;  /* Light gray for better visibility */
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.form-group:hover label {
+  opacity: 1;
+}
+
+.form-group.focused label {
+  color: #4CAF50;  /* Accent color when input is focused */
+}
+
+/* Optional: Add required field indicator */
+.form-group label.required::after {
+  content: '*';
+  color: #ff6b6b;
+  margin-left: 4px;
+}
+
+

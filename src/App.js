@@ -1,48 +1,33 @@
-import React from 'react';
-import { createBrowserRouter,RouterProvider } from "react-router-dom"; 
-import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Signup from './components/signup';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import Homepage from './components/Homepage';
+import Services from './components/Services';
+import About from './components/About'
 import HeroSection from './components/HeroSection';
-import FeatureCard from './components/FeatureCard';
-import Footer from './components/Footer';
- import './App.css'; // This is the main stylesheet
- import Login from './components/Login'
-
+import ContactUs from './components/ContactUs';
+import './App.css';
 
 const App = () => {
-  
-  const features = [
-    { title: 'Door-to-Door Collection', description: 'Convenient and scheduled waste pickup.' },
-    { title: 'Recycling Services', description: 'Proper segregation and processing of recyclables.' },
-    { title: 'Community Awareness', description: 'Empowering communities through education.' },
-    { title: 'Eco-Friendly Disposals', description: 'Sustainable methods for waste treatment.' },
-  ];
-  const router = createBrowserRouter([
-  { 
-    path: "/login", 
-    element: <Login/>
-   },
-]);
- 
   return (
     <>
-     <div className="app"> 
-      <Header/>
-      <RouterProvider router={router} />
-      <main>
-        <HeroSection />
-        <section className="features-section container" id="services">
-          <h2>Our Services</h2>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} title={feature.title} description={feature.description} />
-            ))}
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+      <div className="app">
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/home" element={<HeroSection />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/home" element={<HeroSection />} />
+             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
-          
-  );
+  )
 };
 export default App;

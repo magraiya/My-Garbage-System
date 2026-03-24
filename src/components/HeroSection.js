@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/heroSection.css';
 
 const HeroSection = () => {
   const heroStyle = {
@@ -9,9 +10,8 @@ const HeroSection = () => {
     <section className="hero-section" style={heroStyle}>
       <div className="hero-overlay"></div>
       <div className="hero-content container">
-        <h1>Efficient Waste Management for a Sustainable Future</h1>
-        <p>A new approach to cleanliness, inspired by community and care.</p>
-        {/* <button className="main-cta-button">Join the Movement</button> */}
+        <h1 className="hero-title">Efficient Waste Management for a Sustainable Future</h1>
+        <p className="hero-subtitle">A new approach to cleanliness, inspired by community and care.</p>
       </div>
     </section>
   );
